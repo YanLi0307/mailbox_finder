@@ -155,6 +155,7 @@ DEPENDENCIES
   coffee-rails (~> 3.2.1)
   factory_girl (= 2.6.4)
   jquery-rails
+  nokogiri
   pry (~> 0.9)
   rails (= 3.2.11)
   rspec-rails (~> 2.11)
