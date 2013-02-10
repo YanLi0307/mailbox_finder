@@ -5,12 +5,14 @@ class MailboxesController < ApplicationController
 
   def new
     @mailbox = Mailbox.new
+    @mailbox.build_location
+    #@mailbox.lacation.build
   end
 
   def create
     @mailbox = Mailbox.new(params[:mailbox])
     if @mailbox.save
-      flash[:notice] = "Mailbox got made."
+      flash[:notice] = "Mailbox created."
       redirect_to @mailbox
     else
       flash[:alert] = "Mailbox ain't made!"
@@ -22,3 +24,5 @@ class MailboxesController < ApplicationController
     @mailbox = Mailbox.find(params[:id])
   end
 end
+#@purchase.build_sale
+#@ticket = @project.tickets.build

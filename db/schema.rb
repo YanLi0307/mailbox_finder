@@ -11,13 +11,22 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130210001634) do
+ActiveRecord::Schema.define(:version => 20130210062608) do
 
   create_table "crawler_caches", :force => true do |t|
     t.text     "page_content"
     t.string   "url"
     t.datetime "created_at",   :null => false
     t.datetime "updated_at",   :null => false
+  end
+
+  create_table "locations", :force => true do |t|
+    t.string   "address"
+    t.string   "state"
+    t.string   "zip"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+    t.string   "mailbox_id"
   end
 
   create_table "mailboxes", :force => true do |t|
