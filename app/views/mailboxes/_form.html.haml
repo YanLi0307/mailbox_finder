@@ -1,0 +1,17 @@
+= form_for(@mailbox) do |f|
+  = if @mailbox.errors.present?
+    %ul
+      = @mailbox.errors.full_messages.each do |msg|
+        %li= msg
+   
+  %p
+    = f.label :description
+    = f.text_field :description
+
+    = f.label :pickup_time_m_f, "Pickup Time Mon-Fri"
+    = f.text_field :pickup_time_m_f
+
+    = f.label :pickup_time_sat, "Pickup Time Sat"
+    = f.text_field :pickup_time_sat
+
+  %p= f.submit
