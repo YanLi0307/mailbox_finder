@@ -7,6 +7,17 @@
   %p
     = f.label :description
     = f.text_field :description
+    
+    = f.fields_for(:location) do |l_form|
+      .field
+        = l_form.label :address, "Address"
+        = l_form.text_field :address
+
+        = l_form.label :state, "State"
+        = l_form.text_field :state
+
+        = l_form.label :zip, "Zip"
+        = l_form.text_field :zip
 
     = f.label :pickup_time_m_f, "Pickup Time Mon-Fri"
     = f.text_field :pickup_time_m_f
