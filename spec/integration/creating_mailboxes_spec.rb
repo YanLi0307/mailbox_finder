@@ -9,6 +9,6 @@ feature 'Creating Mailboxes' do
     fill_in 'Pickup Time Sat', :with => '14:30'
     fill_in 'Description', :with => "it's blue and beautiful"
     click_button 'Create Mailbox'
-    page.should have_content('Mailbox created.')
+    page.should have_content('Mailbox got made.')
   end
 end
