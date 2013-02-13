@@ -1,9 +1,10 @@
 require 'spec_helper'
 
 feature "Editing mailboxes" do
+  let!(:location) { Factory(:location) }
+  let!(:mailbox) { Factory(:mailbox, :location => location) }
+
   scenario "Updating a mailbox" do
-    let!(:mailbox) { Factory(:mailbox) }
-    let!(:location) { Factory(:location, :street_one => "6th NE", :street_two => "Kent NE", :zip => '99999', :city => "Auburn", :state => 'WA', :mailbox => mailbox) }
 
     visit '/'
     click_link '6th NE and Kent NE'
