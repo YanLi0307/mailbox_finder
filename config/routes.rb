@@ -1,7 +1,10 @@
 MailboxFinder::Application.routes.draw do
   root :to => "mailboxes#index"
 
-  resources :mailboxes
+  resources :mailboxes do
+    resources :location
+  end
+
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

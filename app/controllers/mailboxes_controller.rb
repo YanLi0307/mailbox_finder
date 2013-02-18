@@ -23,6 +23,21 @@ class MailboxesController < ApplicationController
   def show
     @mailbox = Mailbox.find(params[:id])
   end
+
+  def edit
+    @mailbox = Mailbox.find(params[:id])
+  end
+
+  def update
+    @mailbox = Mailbox.find(params[:id])
+    if @mailbox.update_attributes(params[:mailbox])
+      flash[:notice] = "Mailbox got updated!"
+      redirect_to @mailbox
+    else
+      flash[:alert] = "Mailbox didn't was updated!"
+      render :action => "edit"
+    end
+  end
 end
 #@purchase.build_sale
 #@ticket = @project.tickets.build

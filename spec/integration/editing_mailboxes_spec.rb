@@ -7,9 +7,9 @@ feature "Editing mailboxes" do
   scenario "Updating a mailbox" do
 
     visit '/'
-    click_link '6th NE and Kent NE'
-    click_link 'Edit mailbox'
-    fill_in "Street One", :with => "7th NW"
+    click_link '4233 9th Ave NE'
+    click_link 'Edit Mailbox'
+    fill_in "Description", :with => "It's on fire."
     click_link "Update mailbox"
     page.should have_content "Mailbox has been updated"
     page.should have_content "7th NW and Kent NE"

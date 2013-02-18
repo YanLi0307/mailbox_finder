@@ -1,1 +1,4 @@
-%h2 TODO @mailbox.location
+% title(@mailbox.location, "Mailboxes")
+%h2 @mailbox.location
+
+%a= link_to "Edit Mailbox", edit_mailbox_path(@mailbox)
