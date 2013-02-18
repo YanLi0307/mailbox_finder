@@ -41,11 +41,11 @@ gem 'nokogiri'
 
 group :test, :development do
     gem 'rspec-rails', '~> 2.11'
+    gem 'factory_girl_rails', '~> 4.2.1'
 end
 
 group :test do
   gem 'capybara', '1.1.2'
-  gem 'factory_girl', '2.6.4'
 end
 
 group :development do
