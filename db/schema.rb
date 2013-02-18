@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130210062608) do
+ActiveRecord::Schema.define(:version => 20130218003929) do
 
   create_table "crawler_caches", :force => true do |t|
     t.text     "page_content"
@@ -27,6 +27,9 @@ ActiveRecord::Schema.define(:version => 20130210062608) do
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
     t.string   "mailbox_id"
+    t.float    "lat"
+    t.float    "lng"
+    t.boolean  "gmaps"
   end
 
   create_table "mailboxes", :force => true do |t|
