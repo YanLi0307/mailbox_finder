@@ -7,6 +7,7 @@ gem 'rails', '3.2.11'
 
 gem 'sqlite3'
 gem 'haml-rails', '~> 0.3.5'
+gem 'gmaps4rails', '~> 1.5.6'
 
 # Gems used only for assets and not required
 # in production environments by default.
