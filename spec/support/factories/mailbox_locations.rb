@@ -4,10 +4,10 @@ FactoryGirl.define do
   end
 
   factory :location do
-    street_one "6th NE"
-    street_two "Kent NE"
+    # street_one "6th NE"
+    # street_two "Kent NE"
     zip '99999'
-    city "Auburn"
+    # city "Auburn"
     state 'WA'
     mailbox
   end
