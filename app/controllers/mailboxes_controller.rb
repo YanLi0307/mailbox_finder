@@ -8,12 +8,13 @@ class MailboxesController < ApplicationController
     @mailbox = Mailbox.new
     @mailbox.build_location
     #@mailbox.lacation.build
+
   end
 
   def create
     @mailbox = Mailbox.new(params[:mailbox])
     if @mailbox.save
-      flash[:notice] = "Mailbox created."
+      flash[:notice] = "Mailbox got made."
       redirect_to @mailbox
     else
       flash[:alert] = "Mailbox ain't made!"
