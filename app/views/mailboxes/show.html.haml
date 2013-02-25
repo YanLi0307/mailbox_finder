@@ -1,4 +1,6 @@
-% title(@mailbox.location, "Mailboxes")
-%h2 @mailbox.location
+= @mailbox.location.address
+%h2 
+  = @mailbox.location
 
-%a= link_to "Edit Mailbox", edit_mailbox_path(@mailbox)
+= link_to "Edit Mailbox", edit_mailbox_path(@mailbox)
+

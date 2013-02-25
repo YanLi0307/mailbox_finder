@@ -11,5 +11,5 @@ FactoryGirl.define do
   end
 
   # after(:create) do |mailbox, location|
-  #   FactoryGirl.create_list(:l)
+  # FactoryGirl.create_list(:l)
 end
