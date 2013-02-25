@@ -1,3 +1,7 @@
-%h2 Welcome
+%h2 Mailboxes
+%ul
+  = @mailboxes.each do |mailbox|
+    %li= link_to mailbox.location, mailbox
 %a= link_to "Add New Mailbox", new_mailbox_path
+
 = gmaps4rails(@json)
