@@ -7,7 +7,7 @@ class MailboxesController < ApplicationController
   def new
     @mailbox = Mailbox.new
     @mailbox.build_location
-    #@mailbox.lacation.build
+    # @mailbox.location.build
 
   end
 
