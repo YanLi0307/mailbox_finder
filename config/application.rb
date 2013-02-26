@@ -58,5 +58,11 @@ module MailboxFinder
 
     # Version of your assets, change this if you want to expire all your assets
     config.assets.version = '1.0'
+
+    # to have rails generators automatically generate factories instead of fixtures
+    # from https://github.com/thoughtbot/factory_girl_rails
+    config.generators do |g|
+      g.fixture_replacement :factory_girl
+    end
   end
 end
