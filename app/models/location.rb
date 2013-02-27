@@ -13,7 +13,7 @@ class Location < ActiveRecord::Base
   end
 
   acts_as_gmappable :lat => 'latitude', :lng => 'longitude', :process_geocoding => :geocode?,
-                  :address => "address", :normalized_address => "address",
+                  :address => "address", :normalized_address => "gmaps4rails_address",
                   :msg => "Sorry, not even Google could figure out where that is"
 
   def geocode?
