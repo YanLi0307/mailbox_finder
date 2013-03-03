@@ -1,12 +1,13 @@
 class MailboxesController < ApplicationController
   def index
     @mailboxes = Mailbox.all
+    @json = @mailboxes.map(&:location).to_gmaps4rails
   end
 
   def new
     @mailbox = Mailbox.new
     @mailbox.build_location
-    #@mailbox.lacation.build
+    # @mailbox.location.build
 
   end
 

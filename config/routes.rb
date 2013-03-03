@@ -2,7 +2,7 @@ MailboxFinder::Application.routes.draw do
   root :to => "mailboxes#index"
 
   resources :mailboxes do
-    resources :location
+    resource :location
   end
 
 

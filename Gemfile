@@ -7,6 +7,7 @@ gem 'rails', '3.2.11'
 
 gem 'sqlite3'
 gem 'haml-rails', '~> 0.3.5'
+gem 'gmaps4rails', '~> 1.5.6'
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -40,11 +41,11 @@ gem 'nokogiri'
 
 group :test, :development do
     gem 'rspec-rails', '~> 2.11'
+    gem 'factory_girl_rails', '~> 4.2.1'
 end
 
 group :test do
   gem 'capybara', '1.1.2'
-  gem 'factory_girl', '2.6.4'
 end
 
 group :development do

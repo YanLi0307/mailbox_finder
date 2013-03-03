@@ -13,6 +13,9 @@
         = l_form.label :address, "Address"
         = l_form.text_field :address
 
+        = l_form.label :city, "City"
+        = l_form.text_field :city
+
         = l_form.label :state, "State"
         = l_form.text_field :state
 
@@ -26,3 +29,5 @@
     = f.text_field :pickup_time_sat
 
   %p= f.submit
+
+= link_to "Home", mailboxes_path
