@@ -1,10 +1,9 @@
-require 'open-uri'
+require 'open-uri' 
 
 module CrawlerHelper
 
   def create_or_load_from_cache url
-    cache = CrawlerCache.find_or_initialize_by_url(url)
-
+    cache = CrawlerCache.find_or_initialize_by_url(url) 
     if cache.new_record?
       cache.page_content = open(url).read
       cache.save!
@@ -14,8 +13,11 @@ module CrawlerHelper
   end
 
   def crawl url
+    start = Time.now
     Nokogiri::HTML(create_or_load_from_cache(url).page_content)
-  rescue => ex
+    ap "took #{Time.now - start}"
+    
+    rescue => ex 
     ap ex
   end
 
