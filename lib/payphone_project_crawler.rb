@@ -31,6 +31,9 @@ class PayphoneProjectCrawler
       table = mailbox_pages.css(".mailbox_table_right").select{ |tb| tb.css("td")[0].text.match(/address/i)}.first
       ap table[5]
       ap table[1]
+
+      #
+      
       # address = strip_spaces(table[5])
 
       # pickup_times = strip_spaces(table[1])
@@ -42,5 +45,6 @@ class PayphoneProjectCrawler
     rescue => ex
       binding.pry
     end
+
   end
 end

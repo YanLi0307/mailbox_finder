@@ -13,10 +13,7 @@ module CrawlerHelper
   end
 
   def crawl url
-    start = Time.now
     Nokogiri::HTML(create_or_load_from_cache(url).page_content)
-    ap "took #{Time.now - start}"
-    
     rescue => ex 
     ap ex
   end
