@@ -1,4 +1,5 @@
 class MailboxesController < ApplicationController
+  before_filter :find_mailbox, :only => [:show, :edit, :update]
   def index
     @mailboxes = Mailbox.all
     @json = @mailboxes.map(&:location).to_gmaps4rails
@@ -23,15 +24,12 @@ class MailboxesController < ApplicationController
   end
 
   def show
-    @mailbox = Mailbox.find(params[:id])
   end
 
   def edit
-    @mailbox = Mailbox.find(params[:id])
   end
 
   def update
-    @mailbox = Mailbox.find(params[:id])
     if @mailbox.update_attributes(params[:mailbox])
       flash[:notice] = "Mailbox got updated!"
       redirect_to @mailbox
@@ -39,6 +37,11 @@ class MailboxesController < ApplicationController
       flash[:alert] = "Mailbox didn't was updated!"
       render :action => "edit"
     end
+  end
+
+  private
+  def find_mailbox
+    @mailbox = Mailbox.find(params[:id])
   end
 end
 #@purchase.build_sale
