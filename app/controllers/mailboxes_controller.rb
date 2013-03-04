@@ -1,5 +1,6 @@
 class MailboxesController < ApplicationController
   before_filter :find_mailbox, :only => [:show, :edit, :update]
+  before_filter :find_json_for_maps, :only => [:show, :edit]
   def index
     @mailboxes = Mailbox.all
     @json = @mailboxes.map(&:location).to_gmaps4rails
@@ -42,6 +43,10 @@ class MailboxesController < ApplicationController
   private
   def find_mailbox
     @mailbox = Mailbox.find(params[:id])
+  end
+
+  def find_json_for_maps
+    @json = @mailbox.location.to_gmaps4rails
   end
 end
 #@purchase.build_sale
