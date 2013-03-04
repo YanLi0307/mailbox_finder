@@ -1,6 +1,6 @@
-= @mailbox.location.address
+%h3= link_to "Home", mailboxes_path
+/ # = @mailbox.location.address
 %h2 
   = @mailbox.location
 
 = link_to "Edit Mailbox", edit_mailbox_path(@mailbox)
-
