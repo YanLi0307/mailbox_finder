@@ -32,13 +32,20 @@ class PayphoneProjectCrawler
       ap table[5]
       ap table[1]
 
-      #
-      
+      # crawled_address = table[5]
+      # crawled_city = table[8]
+      # crawled_zip = table[6]
+      # crawled_pickup_times = table[1]
+
+      #mailbox = Mailbox.new(location: Location.new(address: crawled_address, city: crawled_city, zip: crawled_zip), pickup_time: crawled_pickup)
+      #mailbox.save!
       # address = strip_spaces(table[5])
+
+      # :address => crawled_address ----- address: crawled_address
 
       # pickup_times = strip_spaces(table[1])
       # ap "Address"  
-      # ap address
+      # ap address_highlight
       # ap "Pickup Times"
       # ap pickup_times
       # ap "========================="
