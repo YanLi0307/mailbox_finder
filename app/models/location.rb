@@ -7,7 +7,7 @@ class Location < ActiveRecord::Base
   end
 
   def gmaps4rails_address
-    "#{self.address}, #{self.city}, United States, #{self.zip}"
+    "#{self.address}, #{self.city}, United States#{',' + self.zip unless self.zip.blank?}"
   end
 
   acts_as_gmappable :lat => 'latitude', :lng => 'longitude', :process_geocoding => :geocode?,
