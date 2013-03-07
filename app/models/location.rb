@@ -17,4 +17,13 @@ class Location < ActiveRecord::Base
   def geocode?
     (!self.address.blank? && (self.latitude.blank? || self.longitude.blank?)) || self.address_changed?
   end
+
+  #TODO make this a partial and move to controller
+  def gmaps4rails_infowindow
+    outstr = ["<p>#{gmaps4rails_address}</p>"]
+    outstr << ("<p>#{mailbox.description}</p>" unless mailbox.description.blank?)
+    outstr << ("<p>#{mailbox.pickup_time_m_f}</p>" unless mailbox.pickup_time_m_f.blank?)
+    outstr << ("<p>#{mailbox.pickup_time_sat}</p>" unless mailbox.pickup_time_sat.blank?)
+    outstr.join("\n")
+  end
 end
