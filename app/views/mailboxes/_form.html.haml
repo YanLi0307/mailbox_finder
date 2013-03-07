@@ -3,11 +3,13 @@
     %ul
       = @mailbox.errors.full_messages.each do |msg|
         %li= msg
-   
-  %p
+
+  %fieldset
     = f.label :description
-    = f.text_field :description
-    
+    = f.text_field :description, :autofocus => true
+
+  %fieldset
+    %legend Location
     = f.fields_for(:location) do |l_form|
       .field
         = l_form.label :address, "Address"
@@ -22,6 +24,8 @@
         = l_form.label :zip, "Zip"
         = l_form.text_field :zip
 
+  %fieldset
+    %legend Pickup Times
     = f.label :pickup_time_m_f, "Pickup Time Mon-Fri"
     = f.text_field :pickup_time_m_f
 
