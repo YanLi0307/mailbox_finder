@@ -2,10 +2,14 @@
 // They will automatically be included in application.css.
 // You can use Sass here: http://sass-lang.com/
 
+@import 'partials/mixins/rounded_corners'
 input
   display: block
+  +rounded(7px)
 form
-  max-width: 11em
+  max-width: 13em
   margin-left: 1em
 fieldset
   margin-top: 1em
+  +rounded(7px)
+  background-color: #eee
