@@ -1,4 +1,8 @@
 %h1 Mailbox Finder!
+= form_tag mailboxes_path, :method => :get do
+  %p
+    = text_field_tag :search, params[:search]
+    = submit_tag "Search Near", :name => nil
 
 = gmaps4rails(@json)
 

@@ -1,6 +1,8 @@
 class Location < ActiveRecord::Base
   attr_accessible :address, :city, :state, :zip, :latitude, :longitude, :gmaps
   belongs_to :mailbox
+  geocoded_by :normalized_address
+  reverse_geocoded_by :latitude, :longitude
 
   def to_s
     normalized_address
