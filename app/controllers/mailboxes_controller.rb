@@ -1,16 +1,20 @@
 class MailboxesController < ApplicationController
   before_filter :find_mailbox, :only => [:show, :edit, :update]
   before_filter :find_json_for_maps, :only => [:show, :edit]
+
   def index
-    @mailboxes = Mailbox.all
-    @json = @mailboxes.map(&:location).to_gmaps4rails
+    if params[:search]
+      location = Location.near(params[:search], 5, :order => :distance)
+      @mailboxes = location.map(&:mailbox).compact
+    else
+      @mailboxes = Mailbox.all
+    end
+      @json = @mailboxes.map(&:location).to_gmaps4rails
   end
 
   def new
     @mailbox = Mailbox.new
     @mailbox.build_location
-    # @mailbox.location.build
-
   end
 
   def create
@@ -49,5 +53,3 @@ class MailboxesController < ApplicationController
     @json = @mailbox.location.to_gmaps4rails
   end
 end
-#@purchase.build_sale
-#@ticket = @project.tickets.build
