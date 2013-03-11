@@ -51,5 +51,6 @@ end
 
 group :development do
   gem 'pry', '~> 0.9'
+  gem 'pry-nav', '~> 0.2.3'
   gem 'awesome_print', '~> 1.1'
 end
