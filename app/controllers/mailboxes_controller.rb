@@ -2,7 +2,7 @@ class MailboxesController < ApplicationController
   before_filter :find_mailbox, :only => [:show, :edit, :update]
   before_filter :find_json_for_maps, :only => [:show, :edit]
 
-  INITIAL_SEARCH_RADIUS_MILES = 2
+  INITIAL_SEARCH_RADIUS_MILES = 10
   DISTANCE_MULTIPLIER = 3
 
   def index
@@ -60,12 +60,12 @@ class MailboxesController < ApplicationController
   def find_nearest_mailboxes(search, distance, depth)
     location = Location.near(search, distance, :order => :distance)
     if !location.empty?
-      binding.pry
       if depth > 1
         flash[:notice] = 'No Mailboxes found very close to you; search area expanded.'
       end
       @mailboxes = location.map(&:mailbox).compact
     else
+      sleep(0.5)
       find_nearest_mailboxes(search, distance * DISTANCE_MULTIPLIER, depth + 1)
     end
   end
