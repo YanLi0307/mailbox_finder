@@ -1,8 +1,13 @@
 require 'spec_helper'
 
 feature "Deleting mailboxes" do
+  fixtures :mailboxes, :locations
+
+  before(:each) do
+    @mailbox = mailboxes(:one)
+  end
+
   scenario "Deleting a project" do
-    Factory(:mailbox, :description => "Test mailbox")
     visit "/"
     click_link "Test mailbox"
     click_link "Delete Project"

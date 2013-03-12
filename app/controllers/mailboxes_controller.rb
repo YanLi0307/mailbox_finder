@@ -46,6 +46,14 @@ class MailboxesController < ApplicationController
     end
   end
 
+  def destroy
+    @mailbox = Mailbox.find(params[:id])
+    @mailbox.location.destroy
+    @mailbox.destroy
+    flash[:notice] = "Mailbox went gone!"
+    redirect_to mailboxes_path
+  end
+
   private
   def find_mailbox
     @mailbox = Mailbox.find(params[:id])

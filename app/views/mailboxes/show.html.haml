@@ -3,5 +3,11 @@
 %h2 
   = @mailbox.location
 
-= link_to "Edit Mailbox", edit_mailbox_path(@mailbox)
 = gmaps4rails(@json)
+
+= link_to "Edit Mailbox", edit_mailbox_path(@mailbox)
+
+= link_to "Delete Mailbox",
+  mailbox_path(@mailbox),
+  :method => :delete,
+  :confirm => "Are you sure you want to delete this mailbox?\nPlease only delete a mailbox if it is no longer in service."
