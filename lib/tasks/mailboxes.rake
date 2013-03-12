@@ -3,11 +3,11 @@ require 'csv'
 namespace :mailboxes do
   errors = 0
   success = 0
-  desc "TODO"
   task :import => :environment do
     (1..1).each do |csv|
       CSV.foreach("data/mailboxes#{csv}.csv") do |row|
         location = Location.find_or_initialize_by_address row[1]
+        next if location.latitude.present?
 
         if location.new_record?
           location.mailbox = Mailbox.new
@@ -22,6 +22,7 @@ namespace :mailboxes do
         location.state = row[4]
 
         begin
+          sleep 5
           location.save!
         rescue ActiveRecord::RecordInvalid => ex
           ap ex
