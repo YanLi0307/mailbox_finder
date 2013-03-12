@@ -1,0 +1,20 @@
+one:
+  description: "A superb mailbox indeed"
+  pickup_time_m_f: nil
+  pickup_time_sat: nil
+two:
+  description: "a very blue box"
+  pickup_time_m_f: nil
+  pickup_time_sat: nil
+three:
+  description: "Blue Box of mail"
+  pickup_time_m_f: nil
+  pickup_time_sat: nil
+four:
+  description: "A fine mailbox"
+  pickup_time_m_f: nil
+  pickup_time_sat: nil
+five:
+  description: "shiney and blue"
+  pickup_time_m_f: nil
+  pickup_time_sat: nil
