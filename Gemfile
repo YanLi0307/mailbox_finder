@@ -42,8 +42,8 @@ gem 'nokogiri'
 # gem 'debugger'
 
 group :test, :development do
-    gem 'rspec-rails', '~> 2.11'
-    gem 'factory_girl_rails', '~> 4.2.1'
+  gem 'rspec-rails', '~> 2.11'
+  gem 'factory_girl_rails', '~> 4.2.1'
 end
 
 group :test do
@@ -52,5 +52,6 @@ end
 
 group :development do
   gem 'pry', '~> 0.9'
+  gem 'pry-nav', '~> 0.2.3'
   gem 'awesome_print', '~> 1.1'
 end

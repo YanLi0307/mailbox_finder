@@ -1,0 +1,50 @@
+one:
+  address: "3324"
+  state: "Colorado"
+  zip: ""
+  mailbox: one
+  latitude: 39.6500192
+  longitude: -104.8802745
+  gmaps: nil
+  city: "Denver"
+  normalized_address: "East Kenyon Avenue, Denver, CO, USA"
+two:
+  address: "5625 15th Ave NE"
+  state: "Washington"
+  zip: "98105"
+  mailbox: two
+  latitude: 47.6702474
+  longitude: -122.3122419
+  gmaps: nil
+  city: "Seattle"
+  normalized_address: "5625 15th Avenue Northeast, Seattle, WA 98105, USA"
+three:
+  address: "4433 Main St"
+  state: "CA"
+  zip: ""
+  mailbox: three
+  latitude: 34.0035284
+  longitude: -118.2740049
+  gmaps: nil
+  city: "Los Angeles"
+  normalized_address: "4433 Main Street, Los Angeles, CA 90037, USA"
+four:
+  address: "98 8th St SW"
+  state: "CA"
+  zip: ""
+  mailbox: four
+  latitude: 34.285431
+  longitude: -118.4033036
+  gmaps: nil
+  city: "Los Angeles"
+  normalized_address: "98 8th Street, Los Angeles, CA 91342, USA"
+five:
+  address: "75 Main St"
+  state: "WA"
+  zip: ""
+  mailbox: five
+  latitude: 47.5998882
+  longitude: -122.3351597
+  gmaps: nil
+  city: "Seattle"
+  normalized_address: "75 South Main Street, Seattle, WA 98104, USA"
