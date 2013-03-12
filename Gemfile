@@ -41,8 +41,8 @@ gem 'nokogiri'
 # gem 'debugger'
 
 group :test, :development do
-    gem 'rspec-rails', '~> 2.11'
-    gem 'factory_girl_rails', '~> 4.2.1'
+  gem 'rspec-rails', '~> 2.11'
+  gem 'factory_girl_rails', '~> 4.2.1'
 end
 
 group :test do
